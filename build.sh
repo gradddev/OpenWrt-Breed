@@ -34,10 +34,10 @@ fi
 
 
 image=$(mktemp openwrt.bin.XXXXXX)
-dd if=/dev/zero  of="$image" bs=4m count=2             > /dev/null 2>&1
-dd if="$kernel1" of="$image" bs=4m seek=0 conv=notrunc > /dev/null 2>&1
-dd if="$kernel1" of="$image" bs=4m seek=1 conv=notrunc > /dev/null 2>&1
-dd if="$rootfs0" of="$image" bs=4m seek=2              > /dev/null 2>&1
+dd if=/dev/zero  of="$image" bs=4M count=2             > /dev/null 2>&1
+dd if="$kernel1" of="$image" bs=4M seek=0 conv=notrunc > /dev/null 2>&1
+dd if="$kernel1" of="$image" bs=4M seek=1 conv=notrunc > /dev/null 2>&1
+dd if="$rootfs0" of="$image" bs=4M seek=2              > /dev/null 2>&1
 mv "$image" "openwrt.bin"
 
 echo "info: openwrt.bin for Breed bootloader was successfully build"
